@@ -1,13 +1,20 @@
-pipeline {
-    agent any
-    
-    stages {
-        stage('Checkout') {
-            steps {
-                // Récupérer le code depuis le référentiel GitHub
-                git 'https://github.com/fojja/odoo17_project.git'
-                echo 'récupération réussite...'
-            }
-        }
-}
+pipeline{
+  agent any
+  stages {
+    stage("build"){
+      steps {
+        echo 'building the application...'
+      }
+    }
+    stage("test"){
+      steps {
+        echo 'testing the application...'
+      }
+    }
+    stage("deploy"){
+      steps {
+        echo 'deploying the application...'
+      }
+    }
+  }
 }

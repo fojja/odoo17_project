@@ -6,7 +6,7 @@ pipeline {
             steps {
                 script {
                     // Créer le répertoire Bilel dans /opt/odoo17/addons
-                    sh 'mkdir -p /opt/odoo17/addons/Bilel'
+                    sh 'cd /opt/odoo17/addons'
 
                     // Assurer que le répertoire appartient à l'utilisateur jenkins
                     //sh 'sudo chown -R jenkins:jenkins /opt/odoo17/addons/Bilel'

@@ -7,7 +7,7 @@
     'version': '17.0.1.0.3', 
     'category': 'Tools/UI',
     'license': 'LGPL-3', 
-    'author': 'MuK IT',
+    'author': 'MuK IT , Fojja Bilel',
     'website': 'http://www.mukit.at',
     'live_test_url': 'https://mukit.at/demo',
     'contributors': [

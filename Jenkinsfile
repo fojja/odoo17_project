@@ -1,29 +1,21 @@
 pipeline {
     agent any
-    stages {
-        stage('Checkout') {
-            steps {
-                // Récupérer le code depuis le référentiel GitHub
-                git 'https://github.com/fojja/odoo17_project.git'
-            }
-        }
 
-        stage('Update Addons') {
+    stages {
+        stage('Create Bilel Directory') {
             steps {
                 script {
-                    // Exécuter git pull si des changements sont détectés
-                    sh 'git pull origin main'
+                    // Créer le répertoire Bilel dans /opt/odoo17/addons
+                    sh 'sudo mkdir -p /opt/odoo17/addons/Bilel'
+
+                    // Assurer que le répertoire appartient à l'utilisateur jenkins
+                    //sh 'sudo chown -R jenkins:jenkins /opt/odoo17/addons/Bilel'
                 }
             }
         }
 
-        // ... autres étapes du pipeline ...
-
+        // Ajoutez d'autres étapes de pipeline si nécessaire
     }
 
-    post {
-        success {
-            echo 'Pipeline a réussi! Déploiement sur Odoo17 terminé.'
-        }
-    }
+    // Ajoutez des options de pipeline ou d'autres configurations si nécessaire
 }

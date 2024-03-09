@@ -12,7 +12,7 @@ pipeline {
         stage('Update Addons') {
             steps {
                 // Aller dans le répertoire /opt/odoo16/addons/
-                dir('/opt/odoo16/addons/') {
+                dir('/opt/odoo17/addons/') {
                     // Mettre à jour le répertoire avec les dernières modifications du référentiel
                     sh 'git pull origin main'  // Assurez-vous d'être sur la branche que vous souhaitez synchroniser
                 }
@@ -26,7 +26,7 @@ pipeline {
                //     docker.build('odoo16-image:latest', '.')
                 //}
             //}
-        }
+        //}
 
         // ... autres étapes du pipeline ...
 

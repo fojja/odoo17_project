@@ -2,20 +2,22 @@ pipeline {
     agent any
 
     stages {
-        stage('Create Bilel Directory') {
+        stage('Git Pull') {
             steps {
                 script {
-                    // Créer le répertoire Bilel dans /opt/odoo17/addons
-                    sh 'cd /opt/odoo17/addons'
-
-                    // Assurer que le répertoire appartient à l'utilisateur jenkins
-                    //sh 'sudo chown -R jenkins:jenkins /opt/odoo17/addons/Bilel'
+                    // Assurez-vous d'être dans le répertoire correct
+                    dir('/opt/odoo17/addons') {
+                        // Effectuez le git pull depuis le dépôt distant (remplacez l'URL par la vôtre)
+                        sh 'git pull origin master'
+                    }
                 }
             }
         }
 
-        // Ajoutez d'autres étapes de pipeline si nécessaire
+        // Ajoutez d'autres étapes de pipeline au besoin
+        // ...
     }
 
-    // Ajoutez des options de pipeline ou d'autres configurations si nécessaire
+    // Ajoutez des directives post-build au besoin
+    // ...
 }
